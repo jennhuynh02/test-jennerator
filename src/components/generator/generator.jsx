@@ -1,6 +1,7 @@
 import React from 'react';
 import './generator.css';
 import string from '../../util/string';
+import Input from "../input/input";
 import Output from "../output/output";
 
 class Generator extends React.Component {
@@ -42,49 +43,12 @@ class Generator extends React.Component {
   }
 
   render() {
+    console.log(this.state)
     return (
       <div className="generator">
-        <div className="input">
-          <label>
-            Input type:
-            <br/>
-            <select name="type" value={this.state.type} onChange={this.update('type')}>
-              <option value="string">String</option>
-              <option value="array">Array</option>
-              <option value="hash">Hash</option>
-              <option value="integer">Integer</option>
-            </select>
-          </label>
-
-          <label>
-            Capitalized
-            <input type="checkbox" onChange={(e) => this.check('capitalized')} value={this.state.capitalized}/>
-          </label>
-          <label>
-            Lowercase
-            <input type="checkbox" onChange={(e) => this.check('lowercase')} value={this.state.lowercase}/>
-          </label>
-          <label>
-            Integer
-            <input type="checkbox" onChange={(e) => this.check('integer')} value={this.state.integer}/>
-          </label>
-          <label>
-            Specialized
-            <input type="checkbox" onChange={(e) => this.check('specialized')} value={this.state.specialized}/>
-          </label>
-          
-          <label>
-            Length:
-            <br/>
-            <input name="length" value={this.state.length} onChange={this.update('length')}/>
-          </label>
-          
-          <br/>
-          <button onClick={this.createOutput}>Generate Test Case!</button>
-        </div>
+        <Input update={this.update} check={this.check} length={this.state.length} createOut={this.createOutput}/>
         
         <Output output={this.state.output} update={this.update} clear={this.clear}/>
-
       </div>
     )
   }

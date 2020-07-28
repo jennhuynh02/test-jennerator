@@ -17,3 +17,15 @@
   flex-direction: column;
   align-items: flex-start;
 }
+
+.generate-button {
+  height: fit-content;
+}
+
+.checkbox-label {
+  font-size: 12px;
+}
+
+.character-checkboxes {
+  display: flex;
+}
