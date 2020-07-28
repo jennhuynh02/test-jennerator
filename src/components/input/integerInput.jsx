@@ -1,11 +1,12 @@
 import React from 'react';
-
+import integer from "../../util/integer";
 class IntegerInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       type: "integer",
-      length: 0,
+      minimum: 0,
+      maximum: 0,
     }
     this.check = this.check.bind(this);
     this.update = this.update.bind(this);
@@ -24,7 +25,7 @@ class IntegerInput extends React.Component {
 
   createIntegerInput() {
     const { updateOutput } = this.props;
-    // updateOutput(string(this.state.length));
+    updateOutput(integer(this.state.minimum, this.state.maximum));
   }
 
   render() {
@@ -44,11 +45,14 @@ class IntegerInput extends React.Component {
             ))}
           </form>
         </div>
-
+        
         <div className="input-section">
           Length:
-            <br />
-          <input name="length" value={this.state.length} onChange={this.update('length')} />
+          <span className="checkbox-label">Min:</span>
+          <input name="minimum" value={this.state.minimum} onChange={this.update('minimum')} />
+
+          <span className="checkbox-label">Max:</span>
+          <input name="maximum" value={this.state.maximum} onChange={this.update('maximum')} />
         </div>
 
         <button className="generate-button" onClick={this.createIntegerInput}>Generate Test Case!</button>
