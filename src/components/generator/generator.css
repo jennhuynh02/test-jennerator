@@ -1,0 +1,19 @@
+.generator {
+  height: 800px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.output{
+  display: flex;
+  flex-direction: column;
+}
+
+#output {
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
