@@ -5,7 +5,11 @@ function integer(minimum, maximum, type) {
 
   min = Math.ceil(min);
   max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min;
+  if (type === "integer") {
+    return Math.floor(Math.random() * (max - min)) + min;
+  } else {
+    return Math.random() * (max - min) + min;
+  }
 }
 
 export default integer;
