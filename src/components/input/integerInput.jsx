@@ -4,10 +4,7 @@ class IntegerInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      capitalized: false,
-      lowercase: false,
-      integer: false,
-      specialized: false,
+      type: "integer",
       length: 0,
     }
     this.check = this.check.bind(this);
@@ -31,20 +28,21 @@ class IntegerInput extends React.Component {
   }
 
   render() {
-    const characters = ["capitalized", "lowercase", "integer", "specialized"];
+    const types = ["integer", "float"];
+    console.log(this.state)
     return (
       <div className="input">
 
         <div className="input-section">
           Character Types To Include:
-          <div className="character-checkboxes">
-            {characters.map(type => (
+          <form className="character-checkboxes" onChange={(e) => this.check('type')}>
+            {types.map(type => (
               <div key={type}>
                 <span className="checkbox-label">{type[0].toUpperCase() + type.slice(1)}</span>
-                <input type="checkbox" onChange={(e) => this.check(type)} />
+                <input type="radio" value={type}/>
               </div>
             ))}
-          </div>
+          </form>
         </div>
 
         <div className="input-section">

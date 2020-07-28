@@ -8,7 +8,7 @@ class InputType extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      type: 'string',
+      type: 'integer',
     }
 
     this.update = this.update.bind(this);
@@ -38,7 +38,7 @@ class InputType extends React.Component {
         <div className="input-section">
           Input Type:
             <br />
-          <select name="type" onChange={this.update('type')}>
+          <select name="type" onChange={this.update('type')} value={this.state.type}>
             <option value="string">String</option>
             <option value="array">Array</option>
             <option value="hash">Hash</option>
