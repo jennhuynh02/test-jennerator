@@ -8,7 +8,7 @@ class IntegerInput extends React.Component {
       minimum: 0,
       maximum: 0,
     }
-    this.check = this.check.bind(this);
+    this.typeCheck = this.typeCheck.bind(this);
     this.update = this.update.bind(this);
     this.createIntegerInput = this.createIntegerInput.bind(this);
   }
@@ -17,32 +17,35 @@ class IntegerInput extends React.Component {
     return (e) => this.setState({ [field]: e.currentTarget.value });
   }
 
-  check(field) {
-    if (field) {
-      this.setState({ [field]: !this.state[field] });
+  typeCheck(e) {
+    if (this.state.type === "integer") {
+      this.setState({ type: "float" });
+    } else {
+      this.setState({ type: "integer" });
     }
   }
 
   createIntegerInput() {
     const { updateOutput } = this.props;
-    updateOutput(integer(this.state.minimum, this.state.maximum));
+    updateOutput(integer(this.state.minimum, this.state.maximum, this.state.type));
   }
 
   render() {
-    const types = ["integer", "float"];
     console.log(this.state)
     return (
       <div className="input">
 
         <div className="input-section">
           Character Types To Include:
-          <form className="character-checkboxes" onChange={(e) => this.check('type')}>
-            {types.map(type => (
-              <div key={type}>
-                <span className="checkbox-label">{type[0].toUpperCase() + type.slice(1)}</span>
-                <input type="radio" value={type}/>
+          <form className="character-checkboxes" onChange={() => this.typeCheck()}>
+              <div>
+                <span className="checkbox-label">Integer</span>
+                <input type="radio" name="type" value="integer" defaultChecked/>
               </div>
-            ))}
+              <div>
+                <span className="checkbox-label">Float</span>
+                <input type="radio" name="type" value="float"/>
+              </div>
           </form>
         </div>
         
