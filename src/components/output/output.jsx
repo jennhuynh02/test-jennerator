@@ -4,7 +4,6 @@ class Output extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      output: this.props.output,
     }
   }
 
@@ -16,12 +15,12 @@ class Output extends React.Component {
   }
 
   render() {
-    console.log(this.props)
+
     return (
       <div className="output">
         <label>Test Case Output
           <br />
-          <textarea id="output" value={this.props.output} onChange={this.props.update('output')}/>
+          <textarea id="output" value={this.props.output} onChange={this.props.updateOutput('output')}/>
         </label>
 
         <br/>
