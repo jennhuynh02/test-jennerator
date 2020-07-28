@@ -12,7 +12,7 @@ class Input extends React.Component {
 
     return(
       <div className="input">
-        <label>
+        <div className="input-section">
           Input Type:
             <br />
           <select name="type" onChange={this.props.update('type')}>
@@ -21,21 +21,25 @@ class Input extends React.Component {
             <option value="hash">Hash</option>
             <option value="integer">Integer</option>
           </select>
-        </label>
-
-        Character Types:
-        <div className="character-checkboxes">
-          {characters.map(type => (
-            <div key={type}>
-              <span className="checkbox-label">{type[0].toUpperCase() + type.slice(1)}</span>
-              <input type="checkbox" onChange={(e) => this.props.check(type)} value={this.state.capitalized} />
-            </div>
-          ))}
         </div>
 
-        Length:
-          <br />
-        <input name="length" value={this.props.length} onChange={this.props.update('length')} />
+        <div className="input-section">
+          Character Types To Include:
+          <div className="character-checkboxes">
+            {characters.map(type => (
+              <div key={type}>
+                <span className="checkbox-label">{type[0].toUpperCase() + type.slice(1)}</span>
+                <input type="checkbox" onChange={(e) => this.props.check(type)} value={this.state.capitalized} />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="input-section">
+          Length:
+            <br />
+          <input name="length" value={this.props.length} onChange={this.props.update('length')} />
+        </div>
 
         <button className="generate-button" onClick={this.props.createOutput}>Generate Test Case!</button>
 
