@@ -46,7 +46,7 @@ class Generator extends React.Component {
     console.log(this.state)
     return (
       <div className="generator">
-        <Input update={this.update} check={this.check} length={this.state.length} createOut={this.createOutput}/>
+        <Input update={this.update} check={this.check} length={this.state.length} createOutput={this.createOutput}/>
         
         <Output output={this.state.output} update={this.update} clear={this.clear}/>
       </div>

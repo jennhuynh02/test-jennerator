@@ -19,7 +19,7 @@ class Output extends React.Component {
     console.log(this.props)
     return (
       <div className="output">
-        <label>Output:
+        <label>Test Case Output
           <br />
           <textarea id="output" value={this.props.output} onChange={this.props.update('output')}/>
         </label>
