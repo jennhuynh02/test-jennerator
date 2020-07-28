@@ -1,5 +1,8 @@
 import React from 'react';
 import StringInput from "../input/stringInput";
+import IntegerInput from "../input/integerInput";
+import ArrayInput from "../input/arrayInput";
+import HashInput from "../input/hashInput";
 
 class InputType extends React.Component {
   constructor(props) {
@@ -19,6 +22,12 @@ class InputType extends React.Component {
     const { updateOutput } = this.props;
     if (this.state.type === "string") {
       return <StringInput updateOutput={updateOutput} />
+    } else if (this.state.type === "integer") {
+      return <IntegerInput updateOutput={updateOutput} />
+    } else if (this.state.type === "array") {
+      return <ArrayInput updateOutput={updateOutput} />
+    } else if (this.state.type === "hash") {
+      return <HashInput updateOutput={updateOutput} />
     }
   }
 

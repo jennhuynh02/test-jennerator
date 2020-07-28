@@ -29,7 +29,7 @@ class Generator extends React.Component {
     return (
       <div className="generator">
         <InputType updateOutput={this.updateOutput}/> 
-        {/* We need this update passed in as a prop so that we can update the state of the output through this parent component. */}
+        {/* This updateOuput function will be passed to child components to update output. */}
         <Output output={this.state.output} updateOutput={this.updateOutput} clear={this.clear}/>
       </div>
     )
