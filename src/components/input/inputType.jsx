@@ -8,7 +8,7 @@ class InputType extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      type: 'integer',
+      type: 'string',
     }
 
     this.update = this.update.bind(this);

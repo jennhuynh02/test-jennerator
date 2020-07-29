@@ -54,8 +54,18 @@ class StringInput extends React.Component {
           <input name="length" value={this.state.length} onChange={this.update('length')} />
         </div>
 
-        <button className="generate-button" onClick={this.createStringInput}>Generate Test Case!</button>
+        <div className="input-section">
+          Specifications:
+            <br />
+          {/* for (let i = 0; i < this.state.specs; i++) {
+                return (
+                  <input name="length" value={this.state.length} onChange={this.update('length')} />
+                );
+          }; */}
+          <input name="length" value={this.state.length} onChange={this.update('length')} />
+        </div>
 
+        <button className="generate-button" onClick={this.createStringInput}>Generate Test Case!</button>
       </div>
     )
   }

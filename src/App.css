@@ -3,6 +3,7 @@
   background-color: #282c34;
   color: white;
   font-size: 25px;
+  height: 1200px;
 }
 
 .App-header {
@@ -13,3 +14,19 @@
   color: #61dafb;
 }
 
+button {
+  padding: 5px;
+  font-size: smaller;
+}
+
+button:hover {
+  color: rgb(17, 85, 204);
+}
+
+button#copy:hover {
+  cursor: copy;
+}
+
+button#clear:hover {
+  cursor: help;
+}

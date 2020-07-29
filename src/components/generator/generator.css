@@ -9,13 +9,30 @@
   flex-direction: column;
 }
 
+.output {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 300px;
+}
+
 #output {
+  height: -webkit-fill-available;
+  width: -webkit-fill-available;
+  border-radius: 3%;
+  background-color: aliceblue;
+  font-family: Inconsolata,monospace,arial,sans,sans-serif;
+  font-size: 15px;
+  padding: 10px;
+  color: rgb(17, 85, 204);
 }
 
 .input {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  height: 400px;
+  width: 300px;
 }
 
 .input-section {  
