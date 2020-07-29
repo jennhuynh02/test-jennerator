@@ -28,7 +28,7 @@ class StringInput extends React.Component {
 
   createStringInput() {
     const { updateOutput } = this.props;
-    updateOutput(string(this.state.length));
+    updateOutput(string(this.state));
   }
 
   render() {
@@ -57,12 +57,11 @@ class StringInput extends React.Component {
         <div className="input-section">
           Specifications:
             <br />
-          {/* for (let i = 0; i < this.state.specs; i++) {
-                return (
-                  <input name="length" value={this.state.length} onChange={this.update('length')} />
-                );
-          }; */}
+          {/* <span className="checkbox-label">Ensure</span>
           <input name="length" value={this.state.length} onChange={this.update('length')} />
+
+          <span className="checkbox-label">Restrict</span>
+          <input name="length" value={this.state.length} onChange={this.update('length')} /> */}
         </div>
 
         <button className="generate-button" onClick={this.createStringInput}>Generate Test Case!</button>

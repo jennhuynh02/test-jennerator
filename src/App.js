@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        Test Case Generator
+        Test Case Input Generator
       </header>
       
       <Generator/>

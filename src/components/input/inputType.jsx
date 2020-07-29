@@ -36,9 +36,8 @@ class InputType extends React.Component {
     return(
       <div className="input">
         <div className="input-section">
-          Input Type:
-            <br />
-          <select name="type" onChange={this.update('type')} value={this.state.type}>
+          <span>Data Type:</span>
+          <select id="type" name="type" onChange={this.update('type')} value={this.state.type}>
             <option value="string">String</option>
             <option value="array">Array</option>
             <option value="hash">Hash</option>

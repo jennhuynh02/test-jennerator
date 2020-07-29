@@ -24,7 +24,7 @@
   font-family: Inconsolata,monospace,arial,sans,sans-serif;
   font-size: 15px;
   padding: 10px;
-  color: rgb(17, 85, 204);
+  cursor: crosshair;
 }
 
 .input {
@@ -40,6 +40,13 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: -webkit-fill-available;
+}
+
+#type {
+  margin: 10px 0px 20px 0px;
+  width: 50%;
+  text-align-last: center;
 }
 
 .generate-button {
@@ -47,9 +54,14 @@
 }
 
 .checkbox-label {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .character-checkboxes {
   display: flex;
+  margin: 5px;
+}
+
+:focus {
+  outline: none;
 }
