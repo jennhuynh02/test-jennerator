@@ -17,16 +17,5 @@
 button {
   padding: 5px;
   font-size: smaller;
-}
-
-button:hover {
-  color: rgb(17, 85, 204);
-}
-
-button#copy:hover {
-  cursor: copy;
-}
-
-button#clear:hover {
-  cursor: help;
+  cursor: pointer;
 }

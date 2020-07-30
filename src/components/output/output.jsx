@@ -25,8 +25,8 @@ class Output extends React.Component {
 
         <br/>
 
-        <button id="copy" onClick={this.copy}>Copy</button>
-        <button id="clear" onClick={this.props.clear}>Clear</button>
+        <button onClick={this.copy}>Copy</button>
+        <button onClick={this.props.clear}>Clear</button>
       </div>
     )
   }

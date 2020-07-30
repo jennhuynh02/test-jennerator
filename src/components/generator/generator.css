@@ -57,11 +57,14 @@
   font-size: 14px;
 }
 
-.character-checkboxes {
-  display: flex;
-  margin: 5px;
+.checkbox {
+  cursor: pointer;
 }
 
 :focus {
   outline: none;
+}
+
+input.num {
+  width: 40px;
 }
